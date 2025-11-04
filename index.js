@@ -14,7 +14,7 @@ app.use(express.json());
 connectDB();
 
 //  Crear una nueva carta
-app.post("/createCard", async (req, res) => {
+app.post("/addCard", async (req, res) => {
   try {
     const card = await Card.create(req.body);
     res.status(201).json({ message: "Card created successfully!", card });
