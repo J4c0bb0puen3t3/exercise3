@@ -98,7 +98,7 @@ app.get("/review", (req, res) => {
   GET    /hola
   GET    /adios
   POST   /send
-  POST   /createCard
+  POST   /addCard
   GET    /getAllCards
   GET    /getCard/:id
   PUT    /updateCard/:id
