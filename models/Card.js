@@ -5,6 +5,7 @@ const cardSchema = new mongoose.Schema(
         name: { type: String, required: true, trin: true},
         link: { type: String, required: true, trin: true},
         description: { type: String, required: true, },
+        like: { type: Boolean, default: false},
     },
     {
         timestamps: true,

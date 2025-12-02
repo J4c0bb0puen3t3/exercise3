@@ -2,6 +2,7 @@ import express from "express";
 import { connectDB } from "./db.js";
 import { Card } from "./models/Card.js";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
@@ -9,6 +10,11 @@ const app = express();
 connectDB();
 
 app.use(express.json());
+app.use(cors({
+  origin: ["http://localhost:5173", "https://exercise3-ium5.onrender.com"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+}));
 
 // Conexión a la base de datos
 connectDB();
