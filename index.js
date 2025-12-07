@@ -56,7 +56,7 @@ app.get("/getCard/:id", async (req, res) => {
 });
 
 //Actualizar una carta por ID
-app.put("/updateCard/:id", async (req, res) => {
+app.put("/putCard/:id", async (req, res) => {
   try {
     const updatedCard = await Card.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!updatedCard) {
@@ -70,7 +70,7 @@ app.put("/updateCard/:id", async (req, res) => {
 });
 
  //Actualizar parcialmente (PATCH) una carta por ID
-app.patch("/patchCard/:id", async (req, res) => {
+app.patch("/updateCard/:id", async (req, res) => {
   try {
     const patchedCard = await Card.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true });
     if (!patchedCard) {
@@ -107,8 +107,8 @@ app.get("/review", (req, res) => {
   POST   /addCard
   GET    /getAllCards
   GET    /getCard/:id
-  PUT    /updateCard/:id
-  PATCH  /patchCard/:id
+  PUT    /putCard/:id
+  PATCH  /updateCard/:id
   DELETE /deleteCard/:id
   `;
   res.type("text/plain").send(routes);
