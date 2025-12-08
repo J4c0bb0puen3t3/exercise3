@@ -11,7 +11,7 @@ connectDB();
 
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:5173", "https://exercise3-ium5.onrender.com"],
+  origin: ["http://localhost:5173", "https://exercise3-ium5.onrender.com", "https://exercise1-xjfq.onrender.com"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type"],
 }));
